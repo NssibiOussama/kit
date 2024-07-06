@@ -1,0 +1,52 @@
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden" style="background-image: linear-gradient(112.5deg, rgb(214, 214, 214) 0%, rgb(214, 214, 214) 10%,rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%,rgb(157, 157, 157) 55%, rgb(157, 157, 157) 60%,rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%,rgb(99, 99, 99) 91%, rgb(99, 99, 99) 100%),linear-gradient(157.5deg, rgb(214, 214, 214) 0%, rgb(214, 214, 214) 10%,rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%,rgb(157, 157, 157) 55%, rgb(157, 157, 157) 60%,rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%,rgb(99, 99, 99) 91%, rgb(99, 99, 99) 100%),linear-gradient(135deg, rgb(214, 214, 214) 0%, rgb(214, 214, 214) 10%,rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%,rgb(157, 157, 157) 55%, rgb(157, 157, 157) 60%,rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%,rgb(99, 99, 99) 91%, rgb(99, 99, 99) 100%),linear-gradient(90deg, rgb(195, 195, 195),rgb(228, 228, 228)); background-blend-mode:overlay,overlay,overlay,normal;">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <div style="text-align: center;">
+            <h2 style="margin-bottom: 1px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">JOB SUCCESS by</h2>
+            <img src="assets/layout/images/keep_in_touch.png" alt="Keep in touch" style="width: 180px; height: auto; margin-bottom: 20px;">
+          </div>
+        
+        <div style="border-radius:36px; padding:0.3rem; background: linear-gradient(180deg, rgba(237, 124, 11, 0.712) 10%, rgba(247, 149, 48, 0) 30%); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+            <div class="w-full surface-card py-5 px-5 sm:px-8" style="border-radius:53px">
+                <div class="text- mb-5">
+                    <div style="font-family: Verdana, Geneva, sans-serif; font-size: 24px; font-weight: bold; color: #376872;"> Réinitialiser le Mot de Passe
+
+                    </div>
+                    <div style="height: 20px;"></div>
+
+                    <div style="font-family: Verdana, Geneva, sans-serif; font-size: 12px;  color: #18191a;"> 
+                        Vous avez oublié votre mot de passe ? <br>
+                        Veuillez entrer votre adresse e-mail ci-dessous pour réinitialiser votre mot de passe.
+                    </div>
+                      
+                </div>
+                <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+
+                    <div>
+                        <span *ngIf="!emailForm.get('email')?.valid && emailForm.get('email')?.touched"
+                            style="font-size: 14px; color: red">
+                            * Adresse e-mail est requis <br>
+                        </span>
+                        <input id="email1" type="email" placeholder="Entrer votre adresse E-mail" pInputText
+                            class="w-full md:w-30rem mb-5" style="padding:1rem" [formControlName]="'email'" required>
+
+                       
+                        
+                        
+                            
+                        <p-toast></p-toast>
+                        <div style="display: flex; justify-content: center;">
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="w-4 p-2 text-xl" style="background-color: #dfdfdf; color: black; margin-right: 0.5rem; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);" [routerLink]="['/']"></button>
+                            <button pButton pRipple label="Envoyer" class="w-4 p-2 text-xl" icon="pi pi-check" iconPos="right" style="background-color: #376872; margin-left: 0.5rem; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);"></button>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

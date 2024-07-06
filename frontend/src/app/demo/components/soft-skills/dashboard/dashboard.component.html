@@ -1,0 +1,325 @@
+<p-card class="card-titre">
+    <h1 style="margin-left: 20px;">I. Talents de l’équipe</h1>
+</p-card>
+<div style="height: 50px;"></div>
+
+
+
+
+
+<div style="float: left; margin-right: 20px; ">
+    <h4>Choisir vos personnes :</h4>
+
+    <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" placeholder="Choisir vos personnes"
+        optionLabel="name" display="chip" (ngModelChange)="onCitySelectionChange($event)"></p-multiSelect>
+</div>
+<div style="height: 100px;"></div>
+
+<div class="charts-container">
+
+    <div class="chart-container">
+
+        <div *ngIf="chartRadarTalents">
+            <apx-chart [series]="chartRadarTalents.series!" [chart]="chartRadarTalents.chart!"
+                [xaxis]="chartRadarTalents.xaxis!" [stroke]="chartRadarTalents.stroke!"
+                [markers]="chartRadarTalents.markers!" [fill]="chartRadarTalents.fill!"
+                [colors]="chartRadarTalents.colors!" [dataLabels]="chartRadarTalents.dataLabels!"
+                [tooltip]="chartRadarTalents.tooltip!" [plotOptions]="chartRadarTalents.plotOptions!"
+                [yaxis]="chartRadarTalents.yaxis!" [title]="chartRadarTalents.title!"></apx-chart>
+        </div>
+
+
+    </div>
+    <div class="chart-container">
+        <div *ngIf="barTalents" id="chart">
+            <apx-chart [series]="barTalents.series!" [chart]="barTalents.chart!" [dataLabels]="barTalents.dataLabels!"
+                [plotOptions]="barTalents.plotOptions!" [xaxis]="barTalents.xaxis!  " [stroke]="barTalents.stroke"
+                [colors]="barTalents.colors" [title]="barTalents.title" [subtitle]="barTalents.subtitle"
+                [yaxis]="barTalents.yaxis" [tooltip]="barTalents.tooltip"></apx-chart>
+        </div>
+
+    </div>
+</div>
+<hr style="margin-top: 30px; margin-bottom: 20px; width: 97%;">
+
+<p-card>
+    <h1 style="margin-left: 20px;">II. Personnalité- Comportements</h1>
+</p-card>
+<div style="height: 20px;"></div>
+
+<div style="white-space: nowrap;">
+    <h2 style="display: inline-block; margin-right: 37% ; margin-left: 70px">Tous les critères</h2>
+    <h2 style="display: inline-block;">Personnalité</h2>
+</div>
+
+
+<div style="float: right; margin-right: 30%;">
+    <h4>Choisissez vos critères :</h4>
+
+    <p-dropdown [options]="types" [(ngModel)]="selectedTypes" placeholder="Select a type" [editable]="true"
+        optionLabel="name" (ngModelChange)="onDropdownChangeForTypes($event)"></p-dropdown>
+</div>
+
+<div style="height: 80px;"></div>
+
+
+<div style="height: 55px;"></div>
+<div class="charts-container">
+    <div class="chart-container">
+        <div *ngIf="chartMoyennedf1">
+            <apx-chart [series]="chartMoyennedf1.series!" [chart]="chartMoyennedf1.chart!"
+                [xaxis]="chartMoyennedf1.xaxis!" [stroke]="chartMoyennedf1.stroke!" [markers]="chartMoyennedf1.markers!"
+                [fill]="chartMoyennedf1.fill!" [colors]="chartMoyennedf1.colors!"
+                [dataLabels]="chartMoyennedf1.dataLabels!" [tooltip]="chartMoyennedf1.tooltip!"
+                [plotOptions]="chartRadarTalents.plotOptions!" [yaxis]="chartMoyennedf1.yaxis!"
+                [title]="chartMoyennedf1.title!"></apx-chart>
+        </div>
+    </div>
+    <div class="chart-container">
+        <div id="chart2">
+            <div *ngIf="radarPersonnalite">
+                <apx-chart [series]="radarPersonnalite.series!" [chart]="radarPersonnalite.chart!"
+                    [xaxis]="radarPersonnalite.xaxis!" [stroke]="radarPersonnalite.stroke!"
+                    [markers]="radarPersonnalite.markers!" [fill]="radarPersonnalite.fill!"
+                    [colors]="radarPersonnalite.colors!" [dataLabels]="radarPersonnalite.dataLabels!"
+                    [tooltip]="radarPersonnalite.tooltip!" [plotOptions]="radarPersonnalite.plotOptions!"
+                    [yaxis]="radarPersonnalite.yaxis!" [title]="radarPersonnalite.title!"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 20px;"></div>
+
+
+<h4>Choisissez vos critères :</h4>
+
+<div style="float: left; margin-right: 20px; ">
+    <p-dropdown [options]="criters" [(ngModel)]="selectedCriters" placeholder="Sélectionnez des critères"
+        [editable]="true" optionLabel="name" (ngModelChange)="onDropdownChange($event)"></p-dropdown>
+</div>
+<div style="height: 55px;"></div>
+<div class="charts-container">
+    <div class="chart-container">
+        <apx-chart [series]="chartOptions5.series!" [chart]="chartOptions5.chart!" [xaxis]="chartOptions5.xaxis!"
+            [stroke]="chartOptions5.stroke!" [markers]="chartOptions5.markers!"
+            [fill]="chartOptions5.fill!"></apx-chart>
+    </div>
+    <div class="chart-container">
+        <div id="chart">
+            <div *ngIf="barCharCritere">
+                <apx-chart [series]="barCharCritere.series!" [chart]="barCharCritere.chart!"
+                    [dataLabels]="barCharCritere.dataLabels!" [plotOptions]="barCharCritere.plotOptions!"
+                    [xaxis]="barCharCritere.xaxis!" [stroke]="barCharCritere.stroke" [colors]="barCharCritere.colors"
+                    [title]="barCharCritere.title" [subtitle]="barCharCritere.subtitle" [yaxis]="barCharCritere.yaxis"
+                    [tooltip]="barCharCritere.tooltip"></apx-chart>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div style="height: 20px;"></div>
+<h4>Choisissez vos critères :</h4>
+<div style="float: left; margin-right: 20px; ">
+    <p-multiSelect [options]="df1criters" [(ngModel)]="selecteddf1Criters" placeholder="Choisir vos critères
+    " optionLabel="name" display="chip" (ngModelChange)="ondf1CritersSelectionChange($event)"></p-multiSelect>
+</div>
+<div style="height: 100px;"></div>
+<div class="charts-container">
+
+
+    <div class="chart-container">
+        <div id="chart2">
+            <div *ngIf="barChar8">
+                <apx-chart [series]="barChar8.series!" [chart]="barChar8.chart!" [xaxis]="barChar8.xaxis!"
+                    [stroke]="barChar8.stroke!" [markers]="barChar8.markers!" [fill]="barChar8.fill!"
+                    [dataLabels]="barChar8.dataLabels" [plotOptions]="barChar8.plotOptions" [yaxis]="barChar8.yaxis"
+                    [grid]="barChar8.grid" [annotations]="barChar8.annotations"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 100px;"></div>
+<div class="charts-container">
+    <div class="chart-container">
+        <apx-chart [series]="chartOptions7.series!" [chart]="chartOptions7.chart!" [xaxis]="chartOptions7.xaxis!"
+            [stroke]="chartOptions7.stroke!" [markers]="chartOptions7.markers!"
+            [fill]="chartOptions7.fill!"></apx-chart>
+    </div>
+</div>
+<div style="height: 20px;"></div>
+
+
+<h4>Choisir vos personnes :</h4>
+
+<div style="height: 5px;"></div>
+<div style="float: left; margin-right: 20px; ">
+    <p-dropdown [options]="dropdownModule.names" [(ngModel)]="selectedValues.selectedName"
+        placeholder="Sélectionnez des critères" [editable]="true" optionLabel="name"
+        (ngModelChange)="onDropdownChangeForNames($event)"></p-dropdown>
+</div>
+<div style="height: 20px;"></div>
+
+<h4>Choisissez vos critères :</h4>
+<div style="height: 1px;"></div>
+<div style="float: left; margin-right: 20px; ">
+    <p-dropdown [options]="dropdownModule.criteres" [(ngModel)]="selectedValues.selectedGgroupeCriteres"
+        placeholder="Sélectionnez des critères" [editable]="true" optionLabel="name"
+        (ngModelChange)="onDropdownChangeForGroupeCriteres($event)"></p-dropdown>
+</div>
+<div style="height: 55px;"></div>
+<div class="charts-container">
+    <div class="chart-container">
+        <div id="chart">
+            <div *ngIf="personneTypeChart">
+                <apx-chart [series]="personneTypeChart.series!" [chart]="personneTypeChart.chart!"
+                    [dataLabels]="personneTypeChart.dataLabels!" [plotOptions]="personneTypeChart.plotOptions!"
+                    [xaxis]="personneTypeChart.xaxis!" [stroke]="personneTypeChart.stroke"
+                    [colors]="personneTypeChart.colors" [title]="personneTypeChart.title"
+                    [subtitle]="personneTypeChart.subtitle" [yaxis]="personneTypeChart.yaxis"
+                    [tooltip]="personneTypeChart.tooltip"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="chart-container">
+        <div *ngIf="chartMoyenne">
+            <apx-chart [series]="chartMoyenne.series!" [chart]="chartMoyenne.chart!" [xaxis]="chartMoyenne.xaxis!"
+                [stroke]="chartMoyenne.stroke!" [markers]="chartMoyenne.markers!"
+                [fill]="chartMoyenne.fill!"></apx-chart>
+        </div>
+    </div>
+
+</div>
+<hr style="margin-top: 30px; margin-bottom: 20px; width: 97%;">
+<h2 style="margin-left: 70px;">Tous les critères</h2>
+<hr style="margin-top: 30px; margin-bottom: 20px; width: 97%;">
+<p-card>
+    <h1 style="margin-left: 20px;">III. Environnement</h1>
+</p-card>
+<div style="height: 20px;"></div>
+
+
+
+<div style="float: right; ">
+    <h6>Choisir vos personnes :</h6>
+
+    <div style="float: right;">
+        <p-multiSelect [options]="dropdownModuleForEnv.names" [(ngModel)]="selectedValuesForEnv.selectedName"
+            placeholder="Choisir vos personnes" optionLabel="name" display="chip"
+            (ngModelChange)="onEnvDropdownChangeForNames($event)"></p-multiSelect>
+    </div>
+    <div style="height: 30px;"></div>
+
+    <h6>Choisissez vos critères :</h6>
+    <div style="height: 1px;"></div>
+    <div style="float: right;">
+        <p-dropdown [options]="dropdownModuleForEnv.criteres" [(ngModel)]="selectedValuesForEnv.selectedGgroupeCriteres"
+            placeholder="Select a type" [editable]="true" optionLabel="name"
+            (ngModelChange)="onEnvDropdownChangeForCritere($event)"></p-dropdown>
+    </div>
+
+</div>
+
+<h6>Choisir vos personnes:</h6>
+
+<div style="float: left;">
+    <p-multiSelect [options]="namesForEnv" [(ngModel)]="selectedNamesForEnv" placeholder="Choisir vos personnes"
+        optionLabel="name" display="chip" (ngModelChange)="onNamesSelectionChange($event)"></p-multiSelect>
+</div>
+<div style="height: 165px;"></div>
+
+
+<div class="charts-container">
+    <div class="chart-container">
+        <div *ngIf="chartOptions12">
+            <apx-chart [series]="chartOptions12.series!" [chart]="chartOptions12.chart!" [xaxis]="chartOptions12.xaxis!"
+                [stroke]="chartOptions12.stroke!" [markers]="chartOptions12.markers!" [fill]="chartOptions12.fill!"
+                [colors]="chartOptions12.colors!" [dataLabels]="chartOptions12.dataLabels!"
+                [tooltip]="chartOptions12.tooltip!" [plotOptions]="chartOptions12.plotOptions!"
+                [yaxis]="chartOptions12.yaxis!" [title]="chartOptions12.title!"></apx-chart>
+        </div>
+
+    </div>
+    <div class="chart-container">
+        <div id="chart">
+            <div *ngIf="chartOptions13">
+                <apx-chart [series]="chartOptions13.series!" [chart]="chartOptions13.chart!"
+                    [dataLabels]="chartOptions13.dataLabels!" [plotOptions]="chartOptions13.plotOptions!"
+                    [xaxis]="chartOptions13.xaxis!" [colors]="chartOptions13.colors!"
+                    [dataLabels]="chartOptions13.dataLabels!" [tooltip]="chartOptions13.tooltip!"
+                    [plotOptions]="chartOptions13.plotOptions!" [yaxis]="chartOptions13.yaxis!"
+                    [title]="chartOptions13.title!"></apx-chart>
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr style="margin-top: 30px; margin-bottom: 20px; width: 97%;">
+<p-card>
+    <h1 style="margin-left: 20px;">IV. Management</h1>
+</p-card>
+<div style="height: 20px;"></div>
+<div style="float: right;">
+    <h4>Choisir vos personnes :</h4>
+
+    <p-multiSelect [options]="namesForManagement" [(ngModel)]="selectedNamesForManagement"
+        placeholder="Choisir vos personnes" optionLabel="name" display="chip"
+        (ngModelChange)="onNamesSelectionChangeForManagement($event)"></p-multiSelect>
+</div>
+<div style="height: 100px;"></div>
+<div class="charts-container">
+    <div class="chart-container">
+        <apx-chart [series]="chartOptions14.series!" [chart]="chartOptions14.chart!" [xaxis]="chartOptions14.xaxis!"
+            [stroke]="chartOptions14.stroke!" [markers]="chartOptions14.markers!"
+            [fill]="chartOptions14.fill!"></apx-chart>
+    </div>
+    <div class="chart-container">
+        <div id="chart">
+            <div *ngIf="chartOptions15">
+                <apx-chart [series]="chartOptions15.series!" [chart]="chartOptions15.chart!"
+                    [dataLabels]="chartOptions15.dataLabels!" [plotOptions]="chartOptions15.plotOptions!"
+                    [xaxis]="chartOptions15.xaxis!"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+<hr style="margin-top: 30px; margin-bottom: 20px; width: 97%;">
+
+
+<hr style="margin-top: 30px; margin-bottom: 20px; width: 97%;">
+<p-card>
+    <h1 style="margin-left: 20px;">V. Motivations</h1>
+</p-card>
+<h2 style="margin-left: 70px;">Grand critères</h2>
+<div style="float: left;">
+    <h4>Choisir vos personnes:</h4>
+
+    <p-multiSelect [options]="namesForMotivation" [(ngModel)]="selectedNamesForMotivation"
+        placeholder="Choisir vos personnes" optionLabel="name" display="chip"
+        (ngModelChange)="onNamesSelectionChangeForMotivation($event)"></p-multiSelect>
+</div>
+<div style="height: 100px;"></div>
+
+<div class="chart-container">
+
+    <div id="chart">
+        <div *ngIf="chartMotivationCritere">
+            <apx-chart [series]="chartMotivationCritere.series!" [chart]="chartMotivationCritere.chart!"
+                [xaxis]="chartMotivationCritere.xaxis!" [stroke]="chartMotivationCritere.stroke!"
+                [colors]="chartMotivationCritere.colors!" [dataLabels]="chartMotivationCritere.dataLabels!"
+                [legend]="chartMotivationCritere.legend!" [markers]="chartMotivationCritere.markers!"
+                [grid]="chartMotivationCritere.grid!" [yaxis]="chartMotivationCritere.yaxis!"
+                [plotOptions]="chartMotivationCritere.plotOptions!"></apx-chart>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+ 

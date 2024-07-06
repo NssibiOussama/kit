@@ -1,0 +1,68 @@
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-titre {
+
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.chart-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container:last-child {
+  margin-left: 20px;
+}
+
+.chart-container apx-chart {
+  width: 100%;
+}
+
+h1 {
+  color: #508995;
+  font-family: Garamond;
+  font-weight: bold;
+}
+
+h2 {
+  color: #FF8C00;
+  font-family: Garamond;
+  font-weight: bold;
+
+}
+
+h4 {
+
+}
+
+.keep {
+  color: #131111;
+  font-family: Garamond;
+  font-weight: bold;
+  /* Valeur de font-weight plus élevée pour un texte extrêmement bold */
+}
+
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 400px;
+  /* Espace horizontal */
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    margin-right: 20px;
+    /* Réduire l'espace horizontal sur les petits écrans */
+  }
+}
